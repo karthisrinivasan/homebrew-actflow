@@ -12,7 +12,7 @@ class Actflow < Formula
   depends_on "llvm"
   depends_on "cmake"
   depends_on "boost"
-
+  depends_on "libomp"
 
   def install
     # Remove unrecognized options if they cause configure to fail
