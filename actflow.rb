@@ -23,9 +23,9 @@ class Actflow < Formula
 	system "mv git .git"
 	system "mv gitignore .gitignore"
 	system "mv gitmodules .gitmodules"
-    # ENV["CXX"] = prefix.class.getwd
-	system "git submodule update --init --recursive"
+  ENV["CXX"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
   ENV["ACT_HOME"] = prefix.class.getwd
+	system "git submodule update --init --recursive"
 	system "./build"
   end
 
