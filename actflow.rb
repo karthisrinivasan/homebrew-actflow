@@ -4,9 +4,9 @@
 class Actflow < Formula
   desc "Top-level repository for the ACT EDA flow"
   homepage "https://avlsi.csl.yale.edu/act/"
-  url "https://github.com/karthisrinivasan/actflow/archive/refs/tags/test.tar.gz"
+  url "https://github.com/karthisrinivasan/actflow/archive/refs/tags/test2.tar.gz"
   version "test"
-  sha256 "1a7fe704fccc16ee3f8995d94835baf2c8d9349bbc4f9fb12baf87f273b38729"
+  sha256 "3c9dacf73b3acf7c8b099c3126c19ee84a6787b1ae224740d76e67454b03c754"
   license "GPL-2.0"
 
   # depends_on "cmake" => :build
