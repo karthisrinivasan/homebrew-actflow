@@ -9,7 +9,11 @@ class Actflow < Formula
   sha256 "3c9dacf73b3acf7c8b099c3126c19ee84a6787b1ae224740d76e67454b03c754"
   license "GPL-2.0"
 
-  # depends_on "cmake" => :build
+  on_macos do
+    on_arm do
+      depends_on "llvm"
+    end
+  end
 
   def install
     # Remove unrecognized options if they cause configure to fail
@@ -19,6 +23,7 @@ class Actflow < Formula
 	system "mv git .git"
 	system "mv gitignore .gitignore"
 	system "mv gitmodules .gitmodules"
+    # ENV["CXX"] = prefix.class.getwd
 	system "git submodule update --init --recursive"
   ENV["ACT_HOME"] = prefix.class.getwd
 	system "./build"
