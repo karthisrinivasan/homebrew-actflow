@@ -9,11 +9,10 @@ class Actflow < Formula
   sha256 "3c9dacf73b3acf7c8b099c3126c19ee84a6787b1ae224740d76e67454b03c754"
   license "GPL-2.0"
 
-  on_macos do
-    on_arm do
-      depends_on "llvm"
-    end
-  end
+  depends_on "llvm"
+  depends_on "cmake"
+  depends_on "boost"
+
 
   def install
     # Remove unrecognized options if they cause configure to fail
