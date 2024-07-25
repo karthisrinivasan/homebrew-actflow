@@ -16,7 +16,7 @@ class Actflow < Formula
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
     # system "./configure", "--disable-silent-rules", *std_configure_args
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-	system "git", "submodule", "update", "--init", "--recursive"
+	system "git submodule update --init --recursive"
 	system "./build"
   end
 
