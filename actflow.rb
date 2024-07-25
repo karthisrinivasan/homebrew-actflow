@@ -20,6 +20,7 @@ class Actflow < Formula
 	system "mv gitignore .gitignore"
 	system "mv gitmodules .gitmodules"
 	system "git submodule update --init --recursive"
+  ENV["ACT_HOME"] = prefix.getwd
 	system "./build"
   end
 
