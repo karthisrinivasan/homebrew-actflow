@@ -4,9 +4,8 @@
 class Actflow < Formula
   desc "Top-level repository for the ACT EDA flow"
   homepage "https://avlsi.csl.yale.edu/act/"
-  url "https://github.com/karthisrinivasan/actflow/archive/refs/tags/test2.tar.gz"
-  version "test"
-  sha256 "3c9dacf73b3acf7c8b099c3126c19ee84a6787b1ae224740d76e67454b03c754"
+  url "https://github.com/asyncvlsi/actflow.git"
+  version "main"
   license "GPL-2.0"
 
   depends_on "llvm"
@@ -15,19 +14,12 @@ class Actflow < Formula
   depends_on "libomp"
 
   def install
-    # Remove unrecognized options if they cause configure to fail
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    # system "./configure", "--disable-silent-rules", *std_configure_args
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-	system "mv git .git"
-	system "mv gitignore .gitignore"
-	system "mv gitmodules .gitmodules"
-  # ENV["CXX"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
-  ENV["CXX"] = "/opt/homebrew/opt/llvm/bin/clang++"
-  # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
-  ENV["ACT_HOME"] = prefix.class.getwd
-	system "git submodule update --init --recursive"
-	system "./build"
+    # ENV["CXX"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
+    ENV["CXX"] = "/opt/homebrew/opt/llvm/bin/clang++"
+    # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
+    ENV["ACT_HOME"] = prefix.class.getwd
+    system "git submodule update --init --recursive"
+    system "./build"
   end
 
   test do
