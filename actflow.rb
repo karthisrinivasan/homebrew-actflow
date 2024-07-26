@@ -5,6 +5,7 @@ class Actflow < Formula
   desc "Top-level repository for the ACT EDA flow"
   homepage "https://avlsi.csl.yale.edu/act/"
   url "https://github.com/asyncvlsi/actflow.git"
+  branch "main"
   version "main"
   license "GPL-2.0"
 
