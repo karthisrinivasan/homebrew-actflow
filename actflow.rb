@@ -15,6 +15,7 @@ class Actflow < Formula
 
   def install
     # ENV["CXX"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
+    ENV.deparallelize
     ENV["CXX"] = "/opt/homebrew/opt/llvm/bin/clang++"
     # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
     ENV["ACT_HOME"] = prefix.class.getwd
