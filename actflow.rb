@@ -25,7 +25,7 @@ class Actflow < Formula
     system "echo #{prefix}"
     system "touch bleh.act"
     # system "./build"
-    opt_prefix.install "bleh.act"
+    prefix.install "bleh.act"
     # opt_prefix.install Dir["prefix"]
   end
   
