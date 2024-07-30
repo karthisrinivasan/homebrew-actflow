@@ -4,7 +4,7 @@
 class Actflow < Formula
   desc "Top-level repository for the ACT EDA flow"
   homepage "https://avlsi.csl.yale.edu/act/"
-  url "https://github.com/karthisrinivasan/actflow.git", branch: "main"
+  url "https://github.com/karthisrinivasan/act-ls.git", branch: "main"
   version "main"
   license "GPL-2.0"
 
@@ -29,8 +29,9 @@ class Actflow < Formula
     system "echo #{prefix}/act_tools"
     # system "./build"
     prefix.install Dir["act_tools"]
-    bin.install "#{prefix}/act_tools/bin/bintest"
-    ln_sf "#{prefix}/act_tools/bin/bintest", "bintest"
+    prefix.install Dir["act_tools/bin"]
+    bin.install Dir["act_tools/bin"]
+    bin.install "act_tools/bin/bintest"
   end
   
   def caveats
