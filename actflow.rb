@@ -4,7 +4,7 @@
 class Actflow < Formula
   desc "Top-level repository for the ACT EDA flow"
   homepage "https://avlsi.csl.yale.edu/act/"
-  url "https://github.com/karthisrinivasan/act-ls.git", branch: "main"
+  url "https://github.com/karthisrinivasan/actflow.git", branch: "main"
   version "main"
   license "GPL-2.0"
 
@@ -21,22 +21,22 @@ class Actflow < Formula
     ENV["HOMEBREW_LIBOMP_PREFIX"] = "#{HOMEBREW_PREFIX}/opt/libomp"
     # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
     system "mkdir act_tools"
-    system "mkdir act_tools/bin"
+    # system "mkdir act_tools/bin"
     ENV["ACT_HOME"] = "#{prefix}/act_tools"
     # system "git submodule update --init --recursive"
-    system "touch act_tools/bleh1.act"
-    system "touch act_tools/bin/bintest"
+    # system "touch act_tools/bleh1.act"
+    # system "touch act_tools/bin/bintest"
     # system "chmod +x act_tools/bin/bintest"
-    system "echo #{prefix}/act_tools"
-    # system "./build"
+    # system "echo #{prefix}/act_tools"
+    system "./build"
     prefix.install Dir["act_tools"]
-    # prefix.install Dir["act_tools/bin"]
-    bin.install Dir["act_tools/bin"]
   end
   
   def caveats
     <<~EOS
-      Executables are in: #{prefix}/act_tools/bin
+
+      Run: export ACT_HOME=#{prefix}/act_tools/
+    
     EOS
   end
 
