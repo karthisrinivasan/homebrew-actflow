@@ -29,7 +29,7 @@ class Actflow < Formula
     system "echo #{prefix}/act_tools"
     # system "./build"
     prefix.install Dir["act_tools"]
-    bin.install "act_tools/bin/bintest"
+    bin.install "#{prefix}/act_tools/bin/bintest"
     ln_sf "#{prefix}/act_tools/bin/bintest" "bintest"
   end
   
