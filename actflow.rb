@@ -32,6 +32,12 @@ class Actflow < Formula
     bin.install Dir["act_tools/bin"]
   end
   
+  def caveats
+    <<~EOS
+      Executables are in: #{prefix}/act_tools/bin
+    EOS
+  end
+
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
