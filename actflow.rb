@@ -21,14 +21,15 @@ class Actflow < Formula
     ENV["HOMEBREW_LIBOMP_PREFIX"] = "#{HOMEBREW_PREFIX}/opt/libomp"
     # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
     system "mkdir act_tools"
+    prefix.install Dir["act_tools"]
     # system "mkdir act_tools/bin"
     ENV["ACT_HOME"] = "#{prefix}/act_tools"
     # system "git submodule update --init --recursive"
+    system "./build"
     # system "touch act_tools/bleh1.act"
     # system "touch act_tools/bin/bintest"
     # system "chmod +x act_tools/bin/bintest"
     # system "echo #{prefix}/act_tools"
-    system "./build"
     prefix.install Dir["act_tools"]
   end
   
