@@ -25,7 +25,7 @@ class Actflow < Formula
     system "git submodule update --init --recursive"
     system "echo #{prefix}/act_tools"
     # system "./build"
-    prefix.install Dir["bleh"]
+    prefix.install Dir["act_tools"]
   end
   
   test do
