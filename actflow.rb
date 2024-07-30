@@ -20,13 +20,15 @@ class Actflow < Formula
     ENV["CXX"] = "#{HOMEBREW_PREFIX}/opt/llvm/bin/clang++"
     ENV["HOMEBREW_LIBOMP_PREFIX"] = "#{HOMEBREW_PREFIX}/opt/libomp"
     # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
-    ENV["ACT_HOME"] = prefix.class.getwd
+    ENV["ACT_HOME"] = opt_prefix.class.getwd
     system "git submodule update --init --recursive"
     system "echo #{prefix}"
-    system "./build"
-    # bin.install Dir["prefix"]
+    system "touch bleh.act"
+    # system "./build"
+    opt_prefix.install "bleh.act"
+    # opt_prefix.install Dir["prefix"]
   end
-
+  
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
