@@ -22,7 +22,7 @@ class Actflow < Formula
     # ENV["CXX_COMPILER"] = HOMEBREW_PREFIX.class.getwd + "/opt/llvm/bin/clang++"
     ENV["ACT_HOME"] = prefix.class.getwd + "/act_tools"
     system "git submodule update --init --recursive"
-    system "echo #{ACT_HOME}"
+    system "echo #{prefix}/act_tools"
     system "mkdir bleh"
     # system "./build"
     prefix.install Dir["bleh"]
