@@ -31,8 +31,7 @@ class Actflow < Formula
     # system "./build"
     prefix.install Dir["act_tools"]
     # prefix.install Dir["act_tools/bin"]
-    # bin.install Dir["act_tools"]
-    bin.install '#{prefix}/act_tools/bin/bintest'
+    bin.install Dir["act_tools/bin"]
   end
   
   def caveats
