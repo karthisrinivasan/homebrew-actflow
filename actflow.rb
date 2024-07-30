@@ -24,9 +24,11 @@ class Actflow < Formula
     ENV["ACT_HOME"] = "#{prefix}/act_tools"
     # system "git submodule update --init --recursive"
     system "touch act_tools/bleh1.act"
+    system "touch act_tools/bin/bintest"
     system "echo #{prefix}/act_tools"
     # system "./build"
     prefix.install Dir["act_tools"]
+    bin.install Dir["act_tools/bin"]
   end
   
   test do
