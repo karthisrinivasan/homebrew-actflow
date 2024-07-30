@@ -26,13 +26,13 @@ class Actflow < Formula
     # system "git submodule update --init --recursive"
     system "touch act_tools/bleh1.act"
     system "touch act_tools/bin/bintest"
-    system "chmod +x act_tools/bin/bintest"
+    # system "chmod +x act_tools/bin/bintest"
     system "echo #{prefix}/act_tools"
     # system "./build"
     prefix.install Dir["act_tools"]
     # prefix.install Dir["act_tools/bin"]
     # bin.install Dir["act_tools"]
-    bin.install 'act_tools/bin/bintest'
+    bin.install '#{prefix}/act_tools/bin/bintest'
   end
   
   def caveats
