@@ -36,7 +36,12 @@ class Actflow < Formula
   def caveats
     <<~EOS
 
-      Run: export ACT_HOME=#{prefix}/act_tools/
+      Actflow successfully installed.
+      Install location: #{prefix}/act_tools/
+      Add the following to your .rc file:
+      
+      export ACT_HOME=#{prefix}/act_tools/
+      export PATH=#{prefix}/act_tools/bin:$PATH
     
     EOS
   end
