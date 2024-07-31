@@ -40,7 +40,7 @@ class Actflow < Formula
       Install location: #{prefix}/act_tools/
       Add the following to your .rc file:
       
-      export ACT_HOME=#{prefix}/act_tools/
+      export ACT_HOME=#{prefix}/act_tools
       export PATH=#{prefix}/act_tools/bin:$PATH
     
     EOS
